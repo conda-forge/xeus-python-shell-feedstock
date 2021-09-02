@@ -1,5 +1,5 @@
 {% set name = "xeus-python-shell" %}
-{% set version = "0.1.3" %}
+{% set version = "0.1.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: a19e32a6e75d15edc61cbfac68230c0140f108dbc1e26cf983663ab156f1d9d6
+  sha256: 4c8da7b1c1894d7df0815abb10a95a77fa52d40d2d9660ebda6b3f9c6d2dd72c
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -36,7 +36,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
-  summary: 'The xeus-python core python logic.'
+  summary: The xeus-python core python logic.
   dev_url: https://github.com/jupyter-xeus/xeus-python-shell
 
 extra:
