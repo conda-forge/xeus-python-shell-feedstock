@@ -1,5 +1,5 @@
 {% set name = "xeus-python-shell" %}
-{% set version = "0.1.6" %}
+{% set version = "0.1.7" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/jupyter-xeus/xeus-python-shell/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 664889c3a849392bc1a7572e8af5337f0ca52ce568c5f0e50e35b06c0626a031
+  sha256: 3eb70ca82e870de7d46da89a359c05d2d3018dfc09c12572ac8e05de6ea35cd9
 
 build:
   noarch: python
