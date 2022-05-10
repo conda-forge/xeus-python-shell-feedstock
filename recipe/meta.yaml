@@ -11,7 +11,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -21,15 +21,12 @@ requirements:
   run:
     - python  >=3.6
     - ipython  >=7.21,<9
+  run_constrained:
     - debugpy >=1.4,<2
 
 test:
   imports:
     - xeus_python_shell
-  requires:
-    - pip
-  commands:
-    - pip check
 
 about:
   home: https://github.com/jupyter-xeus/xeus-python-shell
