@@ -1,5 +1,5 @@
 {% set name = "xeus-python-shell" %}
-{% set version = "0.4.2" %}
+{% set version = "0.5.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,26 +7,57 @@ package:
 
 source:
   url: https://github.com/jupyter-xeus/xeus-python-shell/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 65b41092ca2bf2551caeae697e0c08d6e6fb46d3f06e0ed1f510e7b55007015c
+  sha256: 69509dd23a36eee7d60fd36ece2a0990ba3c0d0ccd2ef6fdc2456fbf6419baf0
 
 build:
   noarch: python
   number: 0
-  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python  >=3.6
+    - python >=3.7
     - pip
   run:
-    - python  >=3.6
-    - ipython  >=7.21,<9
-  run_constrained:
-    - debugpy >=1.4,<2
+    - python >=3.7
 
 test:
-  imports:
-    - xeus_python_shell
+  commands:
+    - echo "tests in outputs"
+
+outputs:
+  - name: xeus-python-shell-raw
+    build:
+      noarch: python
+      script: {{ PYTHON }} -m pip install . -vv --no-deps
+    requirements:
+      host:
+        - pip
+        - python >=3.6
+      run:
+        - python >=3.6
+      run_constrained:
+        - debugpy >=1.4,<2
+    test:
+      requires:
+        - pip
+      imports:
+        - xeus_python_shell
+
+  - name: xeus-python-shell
+    build:
+      noarch: python
+    requirements:
+      host:
+        - pip
+        - python >=3.6
+      run:
+        - {{ pin_subpackage("xeus-python-shell-raw", exact=True) }}
+        - ipython  >=7.21,<9
+    test:
+      requires:
+        - pip
+      imports:
+        - xeus_python_shell
 
 about:
   home: https://github.com/jupyter-xeus/xeus-python-shell
