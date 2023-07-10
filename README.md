@@ -1,11 +1,11 @@
-About xeus-python-shell
-=======================
+About xeus-python-shell-feedstock
+=================================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/xeus-python-shell-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/jupyter-xeus/xeus-python-shell
 
 Package license: BSD-3-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/xeus-python-shell-feedstock/blob/main/LICENSE.txt)
 
 Summary: The xeus-python core python logic.
 
@@ -30,6 +30,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-xeus--python--shell-green.svg)](https://anaconda.org/conda-forge/xeus-python-shell) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/xeus-python-shell.svg)](https://anaconda.org/conda-forge/xeus-python-shell) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/xeus-python-shell.svg)](https://anaconda.org/conda-forge/xeus-python-shell) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/xeus-python-shell.svg)](https://anaconda.org/conda-forge/xeus-python-shell) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-xeus--python--shell--raw-green.svg)](https://anaconda.org/conda-forge/xeus-python-shell-raw) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/xeus-python-shell-raw.svg)](https://anaconda.org/conda-forge/xeus-python-shell-raw) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/xeus-python-shell-raw.svg)](https://anaconda.org/conda-forge/xeus-python-shell-raw) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/xeus-python-shell-raw.svg)](https://anaconda.org/conda-forge/xeus-python-shell-raw) |
 
 Installing xeus-python-shell
 ============================
@@ -41,16 +42,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `xeus-python-shell` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `xeus-python-shell, xeus-python-shell-raw` can be installed with `conda`:
 
 ```
-conda install xeus-python-shell
+conda install xeus-python-shell xeus-python-shell-raw
 ```
 
 or with `mamba`:
 
 ```
-mamba install xeus-python-shell
+mamba install xeus-python-shell xeus-python-shell-raw
 ```
 
 It is possible to list all of the versions of `xeus-python-shell` available on your platform with `conda`:
