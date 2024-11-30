@@ -11,16 +11,18 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.7
+    - python >={{ python_min }}
 
 test:
+  requires:
+    - python {{ python_min }}
   commands:
     - echo "tests in outputs"
 
@@ -32,14 +34,15 @@ outputs:
     requirements:
       host:
         - pip
-        - python >=3.6
+        - python {{ python_min }}
       run:
-        - python >=3.6
+        - python >={{ python_min }}
       run_constrained:
         - debugpy >=1.4,<2
     test:
       requires:
         - pip
+        - python {{ python_min }}
       imports:
         - xeus_python_shell
 
@@ -49,13 +52,14 @@ outputs:
     requirements:
       host:
         - pip
-        - python >=3.6
+        - python {{ python_min }}
       run:
         - {{ pin_subpackage("xeus-python-shell-raw", exact=True) }}
         - ipython  >=7.21,<9
     test:
       requires:
         - pip
+        - python {{ python_min }}
       imports:
         - xeus_python_shell
 
