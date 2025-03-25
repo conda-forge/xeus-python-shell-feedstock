@@ -55,7 +55,7 @@ outputs:
         - python {{ python_min }}
       run:
         - {{ pin_subpackage("xeus-python-shell-raw", exact=True) }}
-        - ipython  >=7.21,<9
+        - ipython  >=7.21
     test:
       requires:
         - pip
